@@ -9,22 +9,22 @@ const projectName = "richcong.github.io";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Richard Cong',
+  tagline: 'My software engineering portfolio',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: `https://${organizationName}.github.io`,
+  url: `https://richardcong.com`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: `/${projectName}/`,
+  baseUrl: `/`,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: organizationName, // Usually your GitHub org/user name.
   projectName: projectName, // Usually your repo name.
   trailingSlash: false,
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
   
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
