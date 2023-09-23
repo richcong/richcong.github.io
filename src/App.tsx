@@ -1,4 +1,5 @@
 import { Box, CssBaseline, CssVarsProvider } from "@mui/joy";
+import Header from "./components/Header";
 import MyProfile from "./components/MyProfile";
 
 function App() {
@@ -7,13 +8,14 @@ function App() {
       <CssVarsProvider disableTransitionOnChange>
         <CssBaseline />
         <Box sx={{ display: "flex", minHeight: "100dvh" }}>
+          <Header />
           <Box
             component="main"
             className="MainContent"
             sx={{
               pt: {
-                xs: "calc(12px + var(--Header-height))",
-                md: 3,
+                xs: "calc(15px + var(--Header-height))",
+                md: 7,
               },
               pb: {
                 xs: 2,

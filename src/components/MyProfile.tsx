@@ -1,3 +1,5 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
@@ -5,7 +7,6 @@ import Card from "@mui/joy/Card";
 import CardActions from "@mui/joy/CardActions";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
-import FormControl from "@mui/joy/FormControl";
 import FormHelperText from "@mui/joy/FormHelperText";
 import FormLabel from "@mui/joy/FormLabel";
 import IconButton from "@mui/joy/IconButton";
@@ -13,15 +14,17 @@ import Input from "@mui/joy/Input";
 import Option from "@mui/joy/Option";
 import Select from "@mui/joy/Select";
 import Stack from "@mui/joy/Stack";
-import Tab, { tabClasses } from "@mui/joy/Tab";
-import TabList from "@mui/joy/TabList";
-import Tabs from "@mui/joy/Tabs";
 import Textarea from "@mui/joy/Textarea";
 import Typography from "@mui/joy/Typography";
+import { BiLogoSpringBoot } from "react-icons/bi";
+import { FaReact } from "react-icons/fa";
+import { GrOracle } from "react-icons/gr";
+import { SiJavascript, SiMui } from "react-icons/si";
 
 import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRounded";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import { Chip, Tooltip } from "@mui/joy";
 
 export default function MyProfile() {
   return (
@@ -31,79 +34,6 @@ export default function MyProfile() {
         width: "100%",
       }}
     >
-      <Box
-        sx={{
-          position: "sticky",
-          top: {
-            sm: -100,
-            md: -110,
-          },
-          bgcolor: "background.body",
-          zIndex: 9995,
-          mx: "auto",
-        }}
-      >
-        <Box
-          sx={{
-            px: {
-              xs: 2,
-              md: 6,
-            },
-          }}
-        >
-          <Typography
-            level="h2"
-            sx={{
-              mt: 1,
-              mb: 2,
-            }}
-          >
-            Richard Cong
-          </Typography>
-        </Box>
-        <Tabs
-          defaultValue={0}
-          sx={{
-            bgcolor: "transparent",
-          }}
-        >
-          <TabList
-            tabFlex={1}
-            size="sm"
-            sx={{
-              pl: {
-                xs: 0,
-                md: 4,
-              },
-              justifyContent: "left",
-              [`&& .${tabClasses.root}`]: {
-                flex: "initial",
-                bgcolor: "transparent",
-                [`&.${tabClasses.selected}`]: {
-                  fontWeight: "600",
-                  "&::after": {
-                    height: "2px",
-                    bgcolor: "primary.500",
-                  },
-                },
-              },
-            }}
-          >
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={0}>
-              Bio
-            </Tab>
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
-              Resume
-            </Tab>
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={2}>
-              Portfolio
-            </Tab>
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={3}>
-              Hobbies
-            </Tab>
-          </TabList>
-        </Tabs>
-      </Box>
       <Stack
         spacing={4}
         sx={{
@@ -121,12 +51,38 @@ export default function MyProfile() {
         }}
       >
         <Card>
-          <Box sx={{ mb: 1 }}>
-            <Typography level="title-md">Who am I?</Typography>
-            <Typography level="body-sm">
-              I am an Australian software developer, fluent in front end React,
-              Typescript, Material UI.
-            </Typography>
+          <Box display="flex" flexDirection="row" sx={{ mb: 1 }}>
+            <Box>
+              <Typography level="title-md">Bio</Typography>
+              <Typography level="body-sm">
+                Hello world, I'm Richard! I like to code.
+              </Typography>
+            </Box>
+            <Box flex={1}></Box>
+            <Tooltip title="GitHub">
+              <IconButton
+                sx={{
+                  "--IconButton-size": "40px",
+                }}
+                onClick={() =>
+                  window.open("https://github.com/richcong", "_blank")
+                }
+              >
+                <GitHubIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="LinkedIn">
+              <IconButton
+                sx={{
+                  "--IconButton-size": "40px",
+                }}
+                onClick={() =>
+                  window.open("https://linkedin.com/in/richardcong", "_blank")
+                }
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </Tooltip>
           </Box>
           <Divider />
           <Stack
@@ -147,85 +103,72 @@ export default function MyProfile() {
                   alt=""
                 />
               </AspectRatio>
-              <IconButton
-                aria-label="upload new picture"
-                size="sm"
-                variant="outlined"
-                color="neutral"
-                sx={{
-                  bgcolor: "background.body",
-                  position: "absolute",
-                  zIndex: 2,
-                  borderRadius: "50%",
-                  left: 100,
-                  top: 170,
-                  boxShadow: "sm",
-                }}
-              >
-                <EditRoundedIcon />
-              </IconButton>
             </Stack>
             <Stack spacing={2} sx={{ flexGrow: 1 }}>
               <Stack spacing={1}>
-                <FormLabel>Name</FormLabel>
-                <FormControl
-                  sx={{
-                    display: {
-                      sm: "flex-column",
-                      md: "flex-row",
-                    },
-                    gap: 2,
-                  }}
-                >
-                  <Input size="sm" placeholder="First name" />
-                  <Input
-                    size="sm"
-                    placeholder="Last name"
-                    sx={{ flexGrow: 1 }}
-                  />
-                </FormControl>
+                <FormLabel>Role</FormLabel>
+                <Typography variant="soft">Front End Developer</Typography>
               </Stack>
-              <Stack direction="row" spacing={2}>
-                <FormControl>
-                  <FormLabel>Role</FormLabel>
-                  <Input size="sm" defaultValue="UI Developer" />
-                </FormControl>
-                <FormControl sx={{ flexGrow: 1 }}>
-                  <FormLabel>Email</FormLabel>
-                  <Input
-                    size="sm"
-                    type="email"
-                    startDecorator={<EmailRoundedIcon />}
-                    placeholder="email"
-                    defaultValue="siriwatk@test.com"
-                    sx={{ flexGrow: 1 }}
-                  />
-                </FormControl>
+              <Stack direction="row" spacing={3}>
+                <Stack spacing={1}>
+                  <FormLabel>Employer</FormLabel>
+                  <Typography variant="soft">Australian Government</Typography>
+                </Stack>
+                <Stack spacing={1} sx={{ flexGrow: 1 }}>
+                  <FormLabel>Location</FormLabel>
+                  <Typography variant="soft">Canberra, Australia</Typography>
+                </Stack>
               </Stack>
-
-              <div>
-                <FormControl sx={{ display: { sm: "contents" } }}>
-                  <FormLabel>Timezone</FormLabel>
-                  <Select
-                    size="sm"
-                    startDecorator={<AccessTimeFilledRoundedIcon />}
-                    defaultValue="1"
+              <Stack spacing={1}>
+                <FormLabel>Tech stack</FormLabel>
+                <Stack direction="row" spacing={1}>
+                  <Chip
+                    startDecorator={<FaReact />}
+                    onClick={() => window.open("https://react.dev/", "_blank")}
+                    size="md"
                   >
-                    <Option value="1">
-                      Indochina Time (Bangkok){" "}
-                      <Typography textColor="text.tertiary" ml={0.5}>
-                        — GMT+07:00
-                      </Typography>
-                    </Option>
-                    <Option value="2">
-                      Indochina Time (Ho Chi Minh City){" "}
-                      <Typography textColor="text.tertiary" ml={0.5}>
-                        — GMT+07:00
-                      </Typography>
-                    </Option>
-                  </Select>
-                </FormControl>
-              </div>
+                    React
+                  </Chip>
+                  <Chip
+                    startDecorator={<SiJavascript />}
+                    onClick={() =>
+                      window.open(
+                        "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript",
+                        "_blank"
+                      )
+                    }
+                    size="md"
+                  >
+                    Javascript
+                  </Chip>
+                  <Chip
+                    startDecorator={<SiMui />}
+                    onClick={() => window.open("https://mui.com/", "_blank")}
+                    size="md"
+                  >
+                    Material UI
+                  </Chip>
+                  <Chip
+                    startDecorator={<BiLogoSpringBoot />}
+                    onClick={() => window.open("https://spring.io/", "_blank")}
+                    size="md"
+                  >
+                    Java Spring
+                  </Chip>
+                  <Chip
+                    startDecorator={<GrOracle />}
+                    onClick={() =>
+                      window.open(
+                        "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC",
+                        "_blank"
+                      )
+                    }
+                    size="md"
+                  >
+                    Oracle SQL
+                  </Chip>
+                </Stack>
+              </Stack>
             </Stack>
           </Stack>
           <Stack
@@ -267,7 +210,7 @@ export default function MyProfile() {
               </Stack>
               <Stack spacing={1} sx={{ flexGrow: 1 }}>
                 <FormLabel>Name</FormLabel>
-                <FormControl
+                <Box
                   sx={{
                     display: {
                       sm: "flex-column",
@@ -278,15 +221,14 @@ export default function MyProfile() {
                 >
                   <Input size="sm" placeholder="First name" />
                   <Input size="sm" placeholder="Last name" />
-                </FormControl>
+                </Box>
               </Stack>
             </Stack>
-
-            <FormControl>
+            <Box>
               <FormLabel>Role</FormLabel>
               <Input size="sm" defaultValue="UI Developer" />
-            </FormControl>
-            <FormControl sx={{ flexGrow: 1 }}>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
               <FormLabel>Email</FormLabel>
               <Input
                 size="sm"
@@ -296,10 +238,9 @@ export default function MyProfile() {
                 defaultValue="siriwatk@test.com"
                 sx={{ flexGrow: 1 }}
               />
-            </FormControl>
-
+            </Box>
             <div>
-              <FormControl sx={{ display: { sm: "contents" } }}>
+              <Box sx={{ display: { sm: "contents" } }}>
                 <FormLabel>Timezone</FormLabel>
                 <Select
                   size="sm"
@@ -319,25 +260,21 @@ export default function MyProfile() {
                     </Typography>
                   </Option>
                 </Select>
-              </FormControl>
+              </Box>
             </div>
           </Stack>
           <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
             <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-              <Button size="sm" variant="outlined" color="neutral">
-                Cancel
-              </Button>
-              <Button size="sm" variant="solid">
-                Save
-              </Button>
+              <Stack direction="row" spacing={1}></Stack>
             </CardActions>
           </CardOverflow>
         </Card>
         <Card>
           <Box sx={{ mb: 1 }}>
-            <Typography level="title-md">Bio</Typography>
+            <Typography level="title-md">Resume</Typography>
+
             <Typography level="body-sm">
-              Write a short introduction to be displayed on your profile
+              My work experience and education
             </Typography>
           </Box>
           <Divider />
