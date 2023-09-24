@@ -1,9 +1,30 @@
-import { Box, Tab, TabList, Tabs, Typography, tabClasses } from "@mui/joy";
+import { Box, Button, Stack, Typography } from "@mui/joy";
 import GlobalStyles from "@mui/joy/GlobalStyles";
 import Sheet from "@mui/joy/Sheet";
 import ColorSchemeToggle from "./ColorSchemeToggle";
 
-export default function Header() {
+type HeaderProps = {
+  bioRef: React.RefObject<HTMLDivElement>;
+  resumeRef: React.RefObject<HTMLDivElement>;
+  projectsRef: React.RefObject<HTMLDivElement>;
+  hobbiesRef: React.RefObject<HTMLDivElement>;
+};
+
+export default function Header({
+  bioRef,
+  resumeRef,
+  projectsRef,
+  hobbiesRef,
+}: HeaderProps) {
+  const handleScroll = (ref: React.RefObject<HTMLDivElement> | null) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({
+        block: "center",
+        inline: "start",
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <Sheet
       sx={{
@@ -45,52 +66,28 @@ export default function Header() {
           sx={{
             mt: 2,
             mb: 2,
-            ml: -17, //Brings the header to the left in line with the main content
+            ml: -8, //Brings the header to the left in line with the main content
             fontWeight: "600",
           }}
         >
           Richard Cong
         </Typography>
       </Box>
-      <Tabs
-        defaultValue={0}
-        sx={{
-          bgcolor: "transparent",
-        }}
-      >
-        <TabList
-          tabFlex={1}
-          size="sm"
-          sx={{
-            justifyContent: "left",
-            [`&& .${tabClasses.root}`]: {
-              flex: "initial",
-              bgcolor: "transparent",
-              [`&.${tabClasses.selected}`]: {
-                fontWeight: "600",
-                "&::after": {
-                  height: "2px",
-                  bgcolor: "primary.500",
-                },
-              },
-            },
-          }}
-        >
-          <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={0}>
-            Bio
-          </Tab>
-          <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
-            Resume
-          </Tab>
-          <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={2}>
-            Portfolio
-          </Tab>
-          <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={3}>
-            Hobbies
-          </Tab>
-        </TabList>
-      </Tabs>
-      <Box sx={{ ml: 3 }}></Box>
+      <Stack direction="row" gap={1}>
+        <Button variant="plain" onClick={() => handleScroll(bioRef)}>
+          Bio
+        </Button>
+        <Button variant="plain" onClick={() => handleScroll(resumeRef)}>
+          Resume
+        </Button>
+        <Button variant="plain" onClick={() => handleScroll(projectsRef)}>
+          Projects
+        </Button>
+        <Button variant="plain" onClick={() => handleScroll(hobbiesRef)}>
+          Hobbies
+        </Button>
+      </Stack>
+      <Box sx={{ ml: 13 }}></Box>
       <ColorSchemeToggle />
     </Sheet>
   );

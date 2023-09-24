@@ -1,14 +1,25 @@
 import { Box, CssBaseline, CssVarsProvider } from "@mui/joy";
+import { useRef } from "react";
 import Header from "./components/Header";
 import MyProfile from "./components/MyProfile";
 
 function App() {
+  const bioRef = useRef(null);
+  const resumeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const hobbiesRef = useRef(null);
+
   return (
     <>
       <CssVarsProvider disableTransitionOnChange>
         <CssBaseline />
         <Box sx={{ display: "flex", minHeight: "100dvh" }}>
-          <Header />
+          <Header
+            bioRef={bioRef}
+            resumeRef={resumeRef}
+            projectsRef={projectsRef}
+            hobbiesRef={hobbiesRef}
+          />
           <Box
             component="main"
             className="MainContent"
@@ -31,7 +42,12 @@ function App() {
               overflow: "auto",
             }}
           >
-            <MyProfile />
+            <MyProfile
+              bioRef={bioRef}
+              resumeRef={resumeRef}
+              projectsRef={projectsRef}
+              hobbiesRef={hobbiesRef}
+            />
           </Box>
         </Box>
       </CssVarsProvider>
