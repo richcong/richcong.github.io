@@ -2,28 +2,20 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
-import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
-import CardActions from "@mui/joy/CardActions";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
 import FormHelperText from "@mui/joy/FormHelperText";
 import FormLabel from "@mui/joy/FormLabel";
 import IconButton from "@mui/joy/IconButton";
-import Input from "@mui/joy/Input";
-import Option from "@mui/joy/Option";
-import Select from "@mui/joy/Select";
 import Stack from "@mui/joy/Stack";
 import Textarea from "@mui/joy/Textarea";
 import Typography from "@mui/joy/Typography";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { GrOracle } from "react-icons/gr";
-import { SiJavascript, SiMui } from "react-icons/si";
+import { SiMui, SiTypescript } from "react-icons/si";
 
-import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRounded";
-import EditRoundedIcon from "@mui/icons-material/EditRounded";
-import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import { Chip, Tooltip } from "@mui/joy";
 
 type MyProfileProps = {
@@ -67,7 +59,7 @@ export default function MyProfile({
             <Box>
               <Typography level="title-md">Bio</Typography>
               <Typography level="body-sm">
-                Hello world, I'm Richard! I like to code.
+                Hey, I'm Richard! I like to code.
               </Typography>
             </Box>
             <Box flex={1}></Box>
@@ -148,15 +140,15 @@ export default function MyProfile({
                     React
                   </Chip>
                   <Chip
-                    startDecorator={<SiJavascript />}
+                    startDecorator={<SiTypescript />}
                     component="a"
-                    href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript"
+                    href="https://www.typescriptlang.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => null}
                     size="md"
                   >
-                    Javascript
+                    Typescript
                   </Chip>
                   <Chip
                     startDecorator={<SiMui />}
@@ -201,7 +193,7 @@ export default function MyProfile({
             sx={{ display: { xs: "flex", md: "none" }, my: 1 }}
           >
             <Stack direction="row" spacing={2}>
-              <Stack direction="column" spacing={1}>
+              <Stack direction="column">
                 <AspectRatio
                   ratio="1"
                   maxHeight={108}
@@ -214,89 +206,92 @@ export default function MyProfile({
                     alt=""
                   />
                 </AspectRatio>
-                <IconButton
-                  aria-label="upload new picture"
-                  size="sm"
-                  variant="outlined"
-                  color="neutral"
-                  sx={{
-                    bgcolor: "background.body",
-                    position: "absolute",
-                    zIndex: 2,
-                    borderRadius: "50%",
-                    left: 85,
-                    top: 180,
-                    boxShadow: "sm",
-                  }}
-                >
-                  <EditRoundedIcon />
-                </IconButton>
               </Stack>
-              <Stack spacing={1} sx={{ flexGrow: 1 }}>
-                <FormLabel>Name</FormLabel>
-                <Box
-                  sx={{
-                    display: {
-                      sm: "flex-column",
-                      md: "flex-row",
-                    },
-                    gap: 2,
-                  }}
-                >
-                  <Input size="sm" placeholder="First name" />
-                  <Input size="sm" placeholder="Last name" />
-                </Box>
+              <Stack direction="column" gap={1} sx={{ flexGrow: 1 }}>
+                <Stack spacing={1}>
+                  <FormLabel>Role</FormLabel>
+                  <Typography variant="soft">Front End Developer</Typography>
+                </Stack>
+                <Stack spacing={1}>
+                  <FormLabel>Employer</FormLabel>
+                  <Typography variant="soft">Australian Government</Typography>
+                </Stack>
               </Stack>
             </Stack>
-            <Box>
-              <FormLabel>Role</FormLabel>
-              <Input size="sm" defaultValue="UI Developer" />
-            </Box>
-            <Box sx={{ flexGrow: 1 }}>
-              <FormLabel>Email</FormLabel>
-              <Input
-                size="sm"
-                type="email"
-                startDecorator={<EmailRoundedIcon />}
-                placeholder="email"
-                defaultValue="siriwatk@test.com"
-                sx={{ flexGrow: 1 }}
-              />
-            </Box>
-            <div>
-              <Box sx={{ display: { sm: "contents" } }}>
-                <FormLabel>Timezone</FormLabel>
-                <Select
-                  size="sm"
-                  startDecorator={<AccessTimeFilledRoundedIcon />}
-                  defaultValue="1"
+            <Stack spacing={1} sx={{ flexGrow: 1 }}>
+              <FormLabel>Location</FormLabel>
+              <Typography variant="soft">Canberra, Australia</Typography>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>Tech stack</FormLabel>
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  startDecorator={<FaReact />}
+                  component="a" //shows link on bottom of page on hover
+                  href="https://react.dev/"
+                  target="_blank" //opens in new tab
+                  rel="noopener noreferrer" //adds security when opening new link
+                  onClick={() => null} //adds onHover effect
+                  size="md"
                 >
-                  <Option value="1">
-                    Indochina Time (Bangkok){" "}
-                    <Typography textColor="text.tertiary" ml={0.5}>
-                      — GMT+07:00
-                    </Typography>
-                  </Option>
-                  <Option value="2">
-                    Indochina Time (Ho Chi Minh City){" "}
-                    <Typography textColor="text.tertiary" ml={0.5}>
-                      — GMT+07:00
-                    </Typography>
-                  </Option>
-                </Select>
-              </Box>
-            </div>
+                  React
+                </Chip>
+                <Chip
+                  startDecorator={<SiTypescript />}
+                  component="a"
+                  href="https://www.typescriptlang.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Typescript
+                </Chip>
+                <Chip
+                  startDecorator={<SiMui />}
+                  component="a"
+                  href="https://mui.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Material UI
+                </Chip>
+                <Chip
+                  startDecorator={<BiLogoSpringBoot />}
+                  component="a"
+                  href="https://spring.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Java Spring
+                </Chip>
+              </Stack>
+              <Chip
+                startDecorator={<GrOracle />}
+                component="a"
+                href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => null}
+                size="md"
+              >
+                Oracle SQL
+              </Chip>
+            </Stack>
           </Stack>
-          <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
-            <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-              <Stack direction="row" spacing={1}></Stack>
-            </CardActions>
-          </CardOverflow>
+          <CardOverflow
+            sx={{
+              borderTop: "1px solid",
+            }}
+          ></CardOverflow>
         </Card>
         <Card ref={resumeRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Resume</Typography>
-
             <Typography level="body-sm">
               My work experience and education
             </Typography>
@@ -313,16 +308,11 @@ export default function MyProfile({
               275 characters left
             </FormHelperText>
           </Stack>
-          <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
-            <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-              <Button size="sm" variant="outlined" color="neutral">
-                Cancel
-              </Button>
-              <Button size="sm" variant="solid">
-                Save
-              </Button>
-            </CardActions>
-          </CardOverflow>
+          <CardOverflow
+            sx={{
+              borderTop: "1px solid",
+            }}
+          ></CardOverflow>
         </Card>
         <Card ref={projectsRef}>
           <Box sx={{ mb: 1 }}>
@@ -331,19 +321,13 @@ export default function MyProfile({
               Share a few snippets of your work.
             </Typography>
           </Box>
-
           <Divider />
           <Stack spacing={2} sx={{ my: 1 }}></Stack>
-          <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
-            <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-              <Button size="sm" variant="outlined" color="neutral">
-                Cancel
-              </Button>
-              <Button size="sm" variant="solid">
-                Save
-              </Button>
-            </CardActions>
-          </CardOverflow>
+          <CardOverflow
+            sx={{
+              borderTop: "1px solid",
+            }}
+          ></CardOverflow>
         </Card>
         <Card ref={hobbiesRef}>
           <Box sx={{ mb: 1 }}>
@@ -352,19 +336,13 @@ export default function MyProfile({
               Share a few snippets of your work.
             </Typography>
           </Box>
-
           <Divider />
           <Stack spacing={2} sx={{ my: 1 }}></Stack>
-          <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
-            <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-              <Button size="sm" variant="outlined" color="neutral">
-                Cancel
-              </Button>
-              <Button size="sm" variant="solid">
-                Save
-              </Button>
-            </CardActions>
-          </CardOverflow>
+          <CardOverflow
+            sx={{
+              borderTop: "1px solid",
+            }}
+          ></CardOverflow>
         </Card>
       </Stack>
     </Box>
