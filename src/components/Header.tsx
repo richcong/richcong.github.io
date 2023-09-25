@@ -26,69 +26,150 @@ export default function Header({
     }
   };
   return (
-    <Sheet
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "fixed",
-        height: "var(--Header-height)",
-        zIndex: 9998,
-        p: 2,
-        gap: 1,
-        borderBottom: "1px solid",
-        borderColor: "background.level1",
-        boxShadow: "sm",
-        minWidth: "100%",
-        maxWidth: "800px",
-      }}
-    >
-      <GlobalStyles
-        styles={(theme) => ({
-          ":root": {
-            "--Header-height": "52px",
-            [theme.breakpoints.down("xs")]: {
-              "--Header-height": "0px",
-            },
-          },
-        })}
-      />
-      <Box
+    <>
+      {/* Computer view --------------------------------------------------------- */}
+      <Sheet
         sx={{
-          px: {
-            xs: 2,
-            md: 6,
-          },
+          display: { xs: "none", md: "flex" },
+          alignItems: "center",
+          justifyContent: "center",
+          position: "fixed",
+          height: "var(--Header-height)",
+          zIndex: 9998,
+          p: 2,
+          gap: 1,
+          borderBottom: "1px solid",
+          borderColor: "background.level1",
+          boxShadow: "sm",
+          minWidth: "100%",
+          maxWidth: "800px",
         }}
       >
-        <Typography
-          level="h2"
+        <GlobalStyles
+          styles={(theme) => ({
+            ":root": {
+              "--Header-height": "52px",
+              [theme.breakpoints.down("xs")]: {
+                "--Header-height": "0px",
+              },
+            },
+          })}
+        />
+        <Box
           sx={{
-            mt: 2,
-            mb: 2,
-            ml: -8, //Brings the header to the left in line with the main content
-            fontWeight: "600",
+            px: {
+              xs: 2,
+              md: 6,
+            },
           }}
         >
-          Richard Cong
-        </Typography>
-      </Box>
-      <Stack direction="row" gap={1}>
-        <Button variant="plain" onClick={() => handleScroll(bioRef)}>
-          Bio
-        </Button>
-        <Button variant="plain" onClick={() => handleScroll(resumeRef)}>
-          Resume
-        </Button>
-        <Button variant="plain" onClick={() => handleScroll(projectsRef)}>
-          Projects
-        </Button>
-        <Button variant="plain" onClick={() => handleScroll(hobbiesRef)}>
-          Hobbies
-        </Button>
-      </Stack>
-      <Box sx={{ ml: 13 }}></Box>
-      <ColorSchemeToggle />
-    </Sheet>
+          <Typography
+            level="h2"
+            sx={{
+              mt: 2,
+              mb: 2,
+              ml: { md: -6 }, //Brings the header to the left in line with the main content
+              fontWeight: "600",
+            }}
+          >
+            Richard Cong
+          </Typography>
+        </Box>
+        <Stack direction="row" gap={1}>
+          <Button variant="plain" onClick={() => handleScroll(bioRef)}>
+            Bio
+          </Button>
+          <Button variant="plain" onClick={() => handleScroll(resumeRef)}>
+            Resume
+          </Button>
+          <Button variant="plain" onClick={() => handleScroll(projectsRef)}>
+            Projects
+          </Button>
+          <Button variant="plain" onClick={() => handleScroll(hobbiesRef)}>
+            Hobbies
+          </Button>
+        </Stack>
+        <Box sx={{ ml: 12 }}></Box>
+        <ColorSchemeToggle />
+      </Sheet>
+      {/* Mobile view --------------------------------------------------------- */}
+      <Sheet
+        sx={{
+          display: { xs: "flex", md: "none" },
+          alignItems: "center",
+          justifyContent: "center",
+          position: "fixed",
+          height: "var(--Header-height)",
+          zIndex: 9998,
+          p: 2,
+          gap: 1,
+          borderBottom: "1px solid",
+          borderColor: "background.level1",
+          boxShadow: "sm",
+          minWidth: "100%",
+          maxWidth: "800px",
+        }}
+      >
+        <GlobalStyles
+          styles={(theme) => ({
+            ":root": {
+              "--Header-height": "52px",
+              [theme.breakpoints.down("xs")]: {
+                "--Header-height": "0px",
+              },
+            },
+          })}
+        />
+        <Box
+          sx={{
+            px: {
+              xs: 2,
+              md: 6,
+            },
+          }}
+        >
+          <Typography
+            level="h4"
+            sx={{
+              ml: -3, //Brings the header to the left in line with the main content
+              fontWeight: "600",
+            }}
+          >
+            Richard Cong
+          </Typography>
+        </Box>
+        <Stack direction="row">
+          <Button
+            variant="plain"
+            size="sm"
+            onClick={() => handleScroll(bioRef)}
+          >
+            Bio
+          </Button>
+          <Button
+            variant="plain"
+            size="sm"
+            onClick={() => handleScroll(resumeRef)}
+          >
+            Resume
+          </Button>
+          <Button
+            variant="plain"
+            size="sm"
+            onClick={() => handleScroll(projectsRef)}
+          >
+            Projects
+          </Button>
+          <Button
+            variant="plain"
+            size="sm"
+            onClick={() => handleScroll(hobbiesRef)}
+          >
+            Hobbies
+          </Button>
+        </Stack>
+        <ColorSchemeToggle />
+      </Sheet>
+    </>
   );
 }
