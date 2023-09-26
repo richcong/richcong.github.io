@@ -5,11 +5,9 @@ import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
-import FormHelperText from "@mui/joy/FormHelperText";
 import FormLabel from "@mui/joy/FormLabel";
 import IconButton from "@mui/joy/IconButton";
 import Stack from "@mui/joy/Stack";
-import Textarea from "@mui/joy/Textarea";
 import Typography from "@mui/joy/Typography";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
@@ -17,6 +15,7 @@ import { GrOracle } from "react-icons/gr";
 import { SiMui, SiTypescript } from "react-icons/si";
 
 import { Chip, Tooltip } from "@mui/joy";
+import ResumeTimeline from "./ResumeTimeline";
 
 type MyProfileProps = {
   bioRef: React.RefObject<HTMLDivElement>;
@@ -297,17 +296,7 @@ export default function MyProfile({
             </Typography>
           </Box>
           <Divider />
-          <Stack spacing={2} sx={{ my: 1 }}>
-            <Textarea
-              size="sm"
-              minRows={4}
-              sx={{ mt: 1.5 }}
-              defaultValue="I'm a software developer based in Bangkok, Thailand. My goal is to solve UI problems with neat CSS without using too much JavaScript."
-            />
-            <FormHelperText sx={{ mt: 0.75, fontSize: "xs" }}>
-              275 characters left
-            </FormHelperText>
-          </Stack>
+          <ResumeTimeline />
           <CardOverflow
             sx={{
               borderTop: "1px solid",
