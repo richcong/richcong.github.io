@@ -9,6 +9,7 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import Typography from "@mui/material/Typography";
+import "../css/common/List.css";
 
 export default function ResumeTimeline() {
   return (
@@ -16,35 +17,11 @@ export default function ResumeTimeline() {
       <TimelineItem>
         <TimelineOppositeContent
           sx={{ m: "auto 0" }}
-          align="right"
           variant="body2"
           color="text.secondary"
           style={{ flex: 0.1 }}
         >
-          9:30 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
-            Eat
-          </Typography>
-          <Typography>Because you need strength</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: "auto 0" }}
-          variant="body2"
-          color="text.secondary"
-          style={{ flex: 0.1 }}
-        >
-          10:00 am
+          Current
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
@@ -55,9 +32,19 @@ export default function ResumeTimeline() {
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography variant="h6" component="span">
-            Code
+            Australian Government
           </Typography>
-          <Typography>Because it&apos;s awesome!</Typography>
+          <Typography>Front End Developer</Typography>
+          <Typography variant="caption">
+            <ul>
+              <li>Developing a web-based React app from scratch</li>
+              <li>Leads the bug fix effort on the front end</li>
+              <li>
+                Utilised REST APIs to display data from the backend to the front
+              </li>
+              <li>Experienced Agile practitioner</li>
+            </ul>
+          </Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -67,7 +54,7 @@ export default function ResumeTimeline() {
           color="text.secondary"
           style={{ flex: 0.1 }}
         >
-          10:00 am
+          2021
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
@@ -80,7 +67,42 @@ export default function ResumeTimeline() {
           <Typography variant="h6" component="span">
             Australian National University
           </Typography>
-          <Typography>Because you need rest</Typography>
+          <Typography>Bachelor of IT</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+          sx={{ m: "auto 0" }}
+          align="right"
+          variant="body2"
+          color="text.secondary"
+          style={{ flex: 0.1 }}
+        >
+          2020
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot>
+            <FastfoodIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: "12px", px: 2 }}>
+          <Typography variant="h6" component="span">
+            Deloitte
+          </Typography>
+          <Typography>Internship</Typography>
+          <Typography variant="caption">
+            <ul>
+              <li>
+                Used Mulesoft to connect to databases and display data front end
+              </li>
+              <li>
+                Optimised Mulesoft configurations to speed up connection times
+                by 50%
+              </li>
+            </ul>
+          </Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
