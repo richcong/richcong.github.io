@@ -15,7 +15,7 @@ import { GrOracle } from "react-icons/gr";
 import { SiMui, SiTypescript } from "react-icons/si";
 
 import { Chip, Tooltip } from "@mui/joy";
-import ResumeTimeline from "./ResumeTimeline";
+import ResumeTimeline from "./ResumeTimeline.tsx";
 
 type MyProfileProps = {
   bioRef: React.RefObject<HTMLDivElement>;
@@ -307,7 +307,7 @@ export default function MyProfile({
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Projects</Typography>
             <Typography level="body-sm">
-              Share a few snippets of your work.
+              Personal projects I've worked on
             </Typography>
           </Box>
           <Divider />
