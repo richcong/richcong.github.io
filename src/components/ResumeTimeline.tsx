@@ -1,6 +1,6 @@
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import HotelIcon from "@mui/icons-material/Hotel";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import SchoolIcon from "@mui/icons-material/School";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -26,7 +26,7 @@ export default function ResumeTimeline() {
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot color="primary">
-            <LaptopMacIcon />
+            <AccountBalanceIcon />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -37,7 +37,7 @@ export default function ResumeTimeline() {
           <Typography>Front End Developer</Typography>
           <Typography variant="caption">
             <ul>
-              <li>Developing a web-based React app from scratch</li>
+              <li>Developing an internal web-based React app from scratch</li>
               <li>Leads the bug fix effort on the front end</li>
               <li>
                 Utilised REST APIs to display data from the backend to the front
@@ -59,7 +59,7 @@ export default function ResumeTimeline() {
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot color="primary" variant="outlined">
-            <HotelIcon />
+            <SchoolIcon />
           </TimelineDot>
           <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
         </TimelineSeparator>
@@ -83,7 +83,7 @@ export default function ResumeTimeline() {
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot>
-            <FastfoodIcon />
+            <ConstructionIcon />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -91,15 +91,12 @@ export default function ResumeTimeline() {
           <Typography variant="h6" component="span">
             Deloitte
           </Typography>
-          <Typography>Internship</Typography>
+          <Typography>Platform Engineering Internship</Typography>
           <Typography variant="caption">
             <ul>
               <li>
-                Used Mulesoft to connect to databases and display data front end
-              </li>
-              <li>
-                Optimised Mulesoft configurations to speed up connection times
-                by 50%
+                Used Mulesoft to retrieve data from databases and display data
+                front end
               </li>
             </ul>
           </Typography>
