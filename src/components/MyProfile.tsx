@@ -15,7 +15,7 @@ import { GrOracle } from "react-icons/gr";
 import { SiMui, SiTypescript } from "react-icons/si";
 
 import { Chip, Tooltip } from "@mui/joy";
-import ResumeTimeline from "./ResumeTimeline";
+import ResumeTimeline from "./ResumeTimeline.tsx";
 
 type MyProfileProps = {
   bioRef: React.RefObject<HTMLDivElement>;
