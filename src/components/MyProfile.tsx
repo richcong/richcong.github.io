@@ -15,6 +15,7 @@ import { GrOracle } from "react-icons/gr";
 import { SiMui, SiTypescript } from "react-icons/si";
 
 import { Chip, Tooltip } from "@mui/joy";
+import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
 
 type MyProfileProps = {
@@ -57,9 +58,7 @@ export default function MyProfile({
           <Box display="flex" flexDirection="row" sx={{ mb: 1 }}>
             <Box>
               <Typography level="title-md">Bio</Typography>
-              <Typography level="body-sm">
-                Hey, I'm Richard! I like to code.
-              </Typography>
+              <Typography level="body-sm">Hey, I'm Richard!</Typography>
             </Box>
             <Box flex={1}></Box>
             <Tooltip title="GitHub">
@@ -311,7 +310,17 @@ export default function MyProfile({
             </Typography>
           </Box>
           <Divider />
-          <Stack spacing={2} sx={{ my: 1 }}></Stack>
+          <Stack spacing={2} sx={{ my: 1 }}>
+            <ProjectCard
+              title="Portfolio"
+              description="A showcase of my dev journey"
+              src=""
+              srcSet=""
+              year={2023}
+              type="Website"
+              tech={["React", "Joy UI", "Typescript", "Vite", "Github Pages"]}
+            />
+          </Stack>
           <CardOverflow
             sx={{
               borderTop: "1px solid",
