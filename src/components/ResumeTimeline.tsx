@@ -1,6 +1,7 @@
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import SchoolIcon from "@mui/icons-material/School";
+import Typography from "@mui/joy/Typography";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -8,7 +9,6 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import Typography from "@mui/material/Typography";
 import "../css/common/List.css";
 
 export default function ResumeTimeline() {
@@ -31,14 +31,14 @@ export default function ResumeTimeline() {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
+          <Typography level="title-md" component="span">
             Australian Government
           </Typography>
           <Typography>Front End Developer</Typography>
-          <Typography variant="caption">
+          <Typography level="body-sm">
             <ul>
-              <li>Developing an internal web-based React app from scratch</li>
-              <li>Leads the bug fix effort on the front end</li>
+              <li>Developed an internal web-based React app from scratch</li>
+              <li>Led the bug fix effort on the front end</li>
               <li>
                 Utilised REST APIs to display data from the backend to the front
               </li>
@@ -64,7 +64,7 @@ export default function ResumeTimeline() {
           <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
+          <Typography level="title-md" component="span">
             Australian National University
           </Typography>
           <Typography>Bachelor of IT</Typography>
@@ -88,11 +88,11 @@ export default function ResumeTimeline() {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
+          <Typography level="title-md" component="span">
             Deloitte
           </Typography>
           <Typography>Platform Engineering Internship</Typography>
-          <Typography variant="caption">
+          <Typography level="body-sm">
             <ul>
               <li>
                 Used Mulesoft to retrieve data from databases and display data
