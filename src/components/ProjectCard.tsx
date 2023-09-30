@@ -15,6 +15,7 @@ type ProjectCardProps = {
   year: number;
   type: string;
   tech: string[];
+  links: { goto: string; source: string };
 };
 
 export default function ProjectCard({
@@ -25,9 +26,10 @@ export default function ProjectCard({
   year,
   type,
   tech,
+  links,
 }: ProjectCardProps) {
   return (
-    <Card sx={{ width: 400, maxWidth: "100%", boxShadow: "lg" }}>
+    <Card sx={{ maxWidth: "100%", boxShadow: "lg" }}>
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
           <img src={src} srcSet={srcSet} loading="lazy" alt={title} />
@@ -61,8 +63,22 @@ export default function ProjectCard({
             variant="outlined"
             sx={{ bgcolor: "background.surface" }}
           >
-            <Button>Go to</Button>
-            <Button>Source code</Button>
+            <Button
+              component="a"
+              href={links.goto}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to
+            </Button>
+            <Button
+              component="a"
+              href={links.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source code
+            </Button>
           </ButtonGroup>
         </CardActions>
       </CardOverflow>
