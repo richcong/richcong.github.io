@@ -310,7 +310,7 @@ export default function MyProfile({
             </Typography>
           </Box>
           <Divider />
-          <Stack spacing={2} sx={{ my: 1 }}>
+          <Stack sx={{ my: 3, mx: 5 }}>
             <ProjectCard
               title="Portfolio"
               description="A showcase of my dev journey"
@@ -319,6 +319,10 @@ export default function MyProfile({
               year={2023}
               type="Website"
               tech={["React", "Joy UI", "Typescript", "Vite", "Github Pages"]}
+              links={{
+                goto: "https://richardcong.com",
+                source: "https://github.com/richcong/richcong.github.io",
+              }}
             />
           </Stack>
           <CardOverflow
