@@ -3,7 +3,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
-import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
 import FormLabel from "@mui/joy/FormLabel";
 import IconButton from "@mui/joy/IconButton";
@@ -54,7 +53,7 @@ export default function MyProfile({
           },
         }}
       >
-        <Card ref={bioRef}>
+        <Card color="primary" ref={bioRef}>
           <Box display="flex" flexDirection="row" sx={{ mb: 1 }}>
             <Box>
               <Typography level="title-md">Bio</Typography>
@@ -281,13 +280,8 @@ export default function MyProfile({
               </Chip>
             </Stack>
           </Stack>
-          <CardOverflow
-            sx={{
-              borderTop: "1px solid",
-            }}
-          ></CardOverflow>
         </Card>
-        <Card ref={resumeRef}>
+        <Card color="primary" ref={resumeRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Resume</Typography>
             <Typography level="body-sm">
@@ -296,13 +290,8 @@ export default function MyProfile({
           </Box>
           <Divider />
           <ResumeTimeline />
-          <CardOverflow
-            sx={{
-              borderTop: "1px solid",
-            }}
-          ></CardOverflow>
         </Card>
-        <Card ref={projectsRef}>
+        <Card color="primary" ref={projectsRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Projects</Typography>
             <Typography level="body-sm">
@@ -325,13 +314,8 @@ export default function MyProfile({
               }}
             />
           </Stack>
-          <CardOverflow
-            sx={{
-              borderTop: "1px solid",
-            }}
-          ></CardOverflow>
         </Card>
-        <Card ref={hobbiesRef}>
+        <Card color="primary" ref={hobbiesRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Hobbies</Typography>
             <Typography level="body-sm">
@@ -340,11 +324,6 @@ export default function MyProfile({
           </Box>
           <Divider />
           <Stack spacing={2} sx={{ my: 1 }}></Stack>
-          <CardOverflow
-            sx={{
-              borderTop: "1px solid",
-            }}
-          ></CardOverflow>
         </Card>
       </Stack>
     </Box>
