@@ -1,5 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/joy";
-import GlobalStyles from "@mui/joy/GlobalStyles";
+import { Box, Button, GlobalStyles, Stack, Typography } from "@mui/joy";
 import Sheet from "@mui/joy/Sheet";
 import ColorSchemeToggle from "./ColorSchemeToggle";
 
@@ -34,7 +33,7 @@ export default function Header({
           alignItems: "center",
           justifyContent: "center",
           position: "fixed",
-          height: "var(--Header-height)",
+          height: "55px",
           zIndex: 9998,
           p: 2,
           gap: 1,
@@ -42,19 +41,8 @@ export default function Header({
           borderColor: "background.level1",
           boxShadow: "sm",
           minWidth: "100%",
-          maxWidth: "800px",
         }}
       >
-        <GlobalStyles
-          styles={(theme) => ({
-            ":root": {
-              "--Header-height": "52px",
-              [theme.breakpoints.down("xs")]: {
-                "--Header-height": "0px",
-              },
-            },
-          })}
-        />
         <Box
           sx={{
             px: {
@@ -68,7 +56,7 @@ export default function Header({
             sx={{
               mt: 2,
               mb: 2,
-              ml: { md: -6 }, //Brings the header to the left in line with the main content
+              ml: -8, //Brings the header to the left in line with the main content
               fontWeight: "600",
             }}
           >
@@ -89,7 +77,7 @@ export default function Header({
             Hobbies
           </Button>
         </Stack>
-        <Box sx={{ ml: 12 }}></Box>
+        <Box sx={{ ml: 12.5 }}></Box>
         <ColorSchemeToggle />
       </Sheet>
       {/* Mobile view --------------------------------------------------------- */}
@@ -97,76 +85,69 @@ export default function Header({
         sx={{
           display: { xs: "flex", md: "none" },
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           position: "fixed",
           height: "var(--Header-height)",
           zIndex: 9998,
           p: 2,
+          pl: { xs: 1, md: 4 },
           gap: 1,
           borderBottom: "1px solid",
           borderColor: "background.level1",
           boxShadow: "sm",
           minWidth: "100%",
-          maxWidth: "800px",
         }}
       >
         <GlobalStyles
           styles={(theme) => ({
             ":root": {
-              "--Header-height": "52px",
+              "--Header-height": "70px",
               [theme.breakpoints.down("xs")]: {
                 "--Header-height": "0px",
               },
             },
           })}
         />
-        <Box
-          sx={{
-            px: {
-              xs: 2,
-              md: 6,
-            },
-          }}
-        >
+        <Stack direction={"column"}>
           <Typography
             level="h4"
             sx={{
-              ml: -3, //Brings the header to the left in line with the main content
+              pl: "12px",
               fontWeight: "600",
             }}
           >
             Richard Cong
           </Typography>
-        </Box>
-        <Stack direction="row">
-          <Button
-            variant="plain"
-            size="sm"
-            onClick={() => handleScroll(bioRef)}
-          >
-            Bio
-          </Button>
-          <Button
-            variant="plain"
-            size="sm"
-            onClick={() => handleScroll(resumeRef)}
-          >
-            Resume
-          </Button>
-          <Button
-            variant="plain"
-            size="sm"
-            onClick={() => handleScroll(projectsRef)}
-          >
-            Projects
-          </Button>
-          <Button
-            variant="plain"
-            size="sm"
-            onClick={() => handleScroll(hobbiesRef)}
-          >
-            Hobbies
-          </Button>
+          <Stack direction="row">
+            <Button
+              variant="plain"
+              size="sm"
+              onClick={() => handleScroll(bioRef)}
+            >
+              Bio
+            </Button>
+            <Button
+              variant="plain"
+              size="sm"
+              onClick={() => handleScroll(resumeRef)}
+            >
+              Resume
+            </Button>
+            <Button
+              variant="plain"
+              size="sm"
+              onClick={() => handleScroll(projectsRef)}
+            >
+              Projects
+            </Button>
+            <Button
+              variant="plain"
+              size="sm"
+              onClick={() => handleScroll(hobbiesRef)}
+            >
+              Hobbies
+            </Button>
+          </Stack>
         </Stack>
         <ColorSchemeToggle />
       </Sheet>
