@@ -15,7 +15,7 @@ function App() {
   const bioRef = useRef(null);
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
-  const hobbiesRef = useRef(null);
+  const skillsRef = useRef(null);
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
               bioRef={bioRef}
               resumeRef={resumeRef}
               projectsRef={projectsRef}
-              hobbiesRef={hobbiesRef}
+              skillsRef={skillsRef}
             />
             <Box
               component="main"
@@ -55,7 +55,7 @@ function App() {
                 bioRef={bioRef}
                 resumeRef={resumeRef}
                 projectsRef={projectsRef}
-                hobbiesRef={hobbiesRef}
+                skillsRef={skillsRef}
               />
             </Box>
           </Box>
