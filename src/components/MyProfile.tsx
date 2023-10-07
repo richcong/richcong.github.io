@@ -10,7 +10,15 @@ import Typography from "@mui/joy/Typography";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { GrOracle } from "react-icons/gr";
-import { SiJavascript, SiMui, SiTypescript } from "react-icons/si";
+import {
+  SiDocker,
+  SiGit,
+  SiJavascript,
+  SiKubernetes,
+  SiMui,
+  SiRedhatopenshift,
+  SiTypescript,
+} from "react-icons/si";
 
 import { Chip, FormLabel, Tooltip } from "@mui/joy";
 import ProjectCard from "./ProjectCard.tsx";
@@ -230,50 +238,23 @@ export default function MyProfile({
               </Stack>
             </Stack>
             <Stack spacing={1}>
-              <FormLabel>Project Management</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip
-                  startDecorator={<BiLogoSpringBoot />}
-                  component="a"
-                  href="https://spring.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Agile
-                </Chip>
-                <Chip
-                  startDecorator={<GrOracle />}
-                  component="a"
-                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Testing
-                </Chip>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
               <FormLabel>DevOps</FormLabel>
               <Stack direction="row" spacing={1}>
                 <Chip
-                  startDecorator={<BiLogoSpringBoot />}
+                  startDecorator={<SiDocker />}
                   component="a"
-                  href="https://spring.io/"
+                  href="https://www.docker.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => null}
                   size="md"
                 >
-                  OpenShift
+                  Docker
                 </Chip>
                 <Chip
-                  startDecorator={<BiLogoSpringBoot />}
+                  startDecorator={<SiKubernetes />}
                   component="a"
-                  href="https://spring.io/"
+                  href="https://kubernetes.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => null}
@@ -282,32 +263,54 @@ export default function MyProfile({
                   Kubernetes
                 </Chip>
                 <Chip
-                  startDecorator={<GrOracle />}
+                  startDecorator={<SiRedhatopenshift />}
                   component="a"
-                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
+                  href="https://www.redhat.com/en/technologies/cloud-computing/openshift"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => null}
                   size="md"
                 >
-                  Docker
+                  OpenShift
                 </Chip>
               </Stack>
             </Stack>
             <Stack spacing={1}>
               <FormLabel>Cloud</FormLabel>
               <Stack direction="row" spacing={1}>
+                <Chip size="md">...</Chip>
+              </Stack>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>Project Management</FormLabel>
+              <Stack direction="row" spacing={1}>
                 <Chip
-                  startDecorator={<BiLogoSpringBoot />}
                   component="a"
-                  href="https://spring.io/"
+                  href="https://www.atlassian.com/agile"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => null}
                   size="md"
                 >
-                  ...
+                  Agile
                 </Chip>
+              </Stack>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>Others</FormLabel>
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  startDecorator={<SiGit />}
+                  component="a"
+                  href="https://git-scm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Git
+                </Chip>
+                <Chip size="md">Testing</Chip>
               </Stack>
             </Stack>
           </Stack>
