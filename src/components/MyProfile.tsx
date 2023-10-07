@@ -4,16 +4,15 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import Divider from "@mui/joy/Divider";
-import FormLabel from "@mui/joy/FormLabel";
 import IconButton from "@mui/joy/IconButton";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { GrOracle } from "react-icons/gr";
-import { SiMui, SiTypescript } from "react-icons/si";
+import { SiJavascript, SiMui, SiTypescript } from "react-icons/si";
 
-import { Chip, Tooltip } from "@mui/joy";
+import { Chip, FormLabel, Tooltip } from "@mui/joy";
 import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
 
@@ -21,14 +20,14 @@ type MyProfileProps = {
   bioRef: React.RefObject<HTMLDivElement>;
   resumeRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
-  hobbiesRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
 };
 
 export default function MyProfile({
   bioRef,
   resumeRef,
   projectsRef,
-  hobbiesRef,
+  skillsRef,
 }: MyProfileProps) {
   return (
     <Box
@@ -53,11 +52,15 @@ export default function MyProfile({
           },
         }}
       >
-        <Card color="primary" ref={bioRef}>
+        <Card
+          variant="plain"
+          sx={{ backgroundColor: "background.body" }}
+          ref={bioRef}
+        >
           <Box display="flex" flexDirection="row" sx={{ mb: 1 }}>
             <Box>
               <Typography level="title-md">Bio</Typography>
-              <Typography level="body-sm">Hey, I'm Richard!</Typography>
+              <Typography level="body-sm">About me</Typography>
             </Box>
             <Box flex={1}></Box>
             <Tooltip title="GitHub">
@@ -108,80 +111,10 @@ export default function MyProfile({
               </AspectRatio>
             </Stack>
             <Stack spacing={2} sx={{ flexGrow: 1 }}>
-              <Stack spacing={1}>
-                <FormLabel>Role</FormLabel>
-                <Typography variant="soft">Front End Developer</Typography>
-              </Stack>
-              <Stack direction="row" spacing={3}>
-                <Stack spacing={1}>
-                  <FormLabel>Employer</FormLabel>
-                  <Typography variant="soft">Australian Government</Typography>
-                </Stack>
-                <Stack spacing={1} sx={{ flexGrow: 1 }}>
-                  <FormLabel>Location</FormLabel>
-                  <Typography variant="soft">Canberra, Australia</Typography>
-                </Stack>
-              </Stack>
-              <Stack spacing={1}>
-                <FormLabel>Tech stack</FormLabel>
-                <Stack direction="row" spacing={1}>
-                  <Chip
-                    startDecorator={<FaReact />}
-                    component="a" //shows link on bottom of page on hover
-                    href="https://react.dev/"
-                    target="_blank" //opens in new tab
-                    rel="noopener noreferrer" //adds security when opening new link
-                    onClick={() => null} //adds onHover effect
-                    size="md"
-                  >
-                    React
-                  </Chip>
-                  <Chip
-                    startDecorator={<SiTypescript />}
-                    component="a"
-                    href="https://www.typescriptlang.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => null}
-                    size="md"
-                  >
-                    Typescript
-                  </Chip>
-                  <Chip
-                    startDecorator={<SiMui />}
-                    component="a"
-                    href="https://mui.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => null}
-                    size="md"
-                  >
-                    Material UI
-                  </Chip>
-                  <Chip
-                    startDecorator={<BiLogoSpringBoot />}
-                    component="a"
-                    href="https://spring.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => null}
-                    size="md"
-                  >
-                    Java Spring
-                  </Chip>
-                  <Chip
-                    startDecorator={<GrOracle />}
-                    component="a"
-                    href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => null}
-                    size="md"
-                  >
-                    Oracle SQL
-                  </Chip>
-                </Stack>
-              </Stack>
+              <Typography level="h2" fontWeight={400}>
+                Hello! I'm Richard Cong. I'm a Front End Developer working for
+                the Australian Government in Canberra, Australia.
+              </Typography>
             </Stack>
           </Stack>
           <Stack
@@ -206,55 +139,72 @@ export default function MyProfile({
               </Stack>
               <Stack direction="column" gap={1} sx={{ flexGrow: 1 }}>
                 <Stack spacing={1}>
-                  <FormLabel>Role</FormLabel>
-                  <Typography variant="soft">Front End Developer</Typography>
-                </Stack>
-                <Stack spacing={1}>
-                  <FormLabel>Employer</FormLabel>
-                  <Typography variant="soft">Australian Government</Typography>
+                  <Typography level="body-lg">
+                    Hello! I'm Richard Cong. I'm a Front End Developer working
+                    for the Australian Government in Canberra, Australia.
+                  </Typography>
                 </Stack>
               </Stack>
             </Stack>
-            <Stack spacing={1} sx={{ flexGrow: 1 }}>
-              <FormLabel>Location</FormLabel>
-              <Typography variant="soft">Canberra, Australia</Typography>
+          </Stack>
+        </Card>
+        <Card color="primary" ref={skillsRef}>
+          <Box sx={{ mb: 1 }}>
+            <Typography level="title-md">Skills</Typography>
+            <Typography level="body-sm">My tech stack</Typography>
+          </Box>
+          <Divider />
+          <Stack spacing={1}>
+            <FormLabel>Front End</FormLabel>
+            <Stack direction="row" spacing={1}>
+              <Chip
+                startDecorator={<FaReact />}
+                component="a" //shows link on bottom of page on hover
+                href="https://react.dev/"
+                target="_blank" //opens in new tab
+                rel="noopener noreferrer" //adds security when opening new link
+                onClick={() => null} //adds onHover effect
+                size="md"
+              >
+                React
+              </Chip>
+              <Chip
+                startDecorator={<SiJavascript />}
+                component="a"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => null}
+                size="md"
+              >
+                Javascript
+              </Chip>
+              <Chip
+                startDecorator={<SiTypescript />}
+                component="a"
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => null}
+                size="md"
+              >
+                Typescript
+              </Chip>
+              <Chip
+                startDecorator={<SiMui />}
+                component="a"
+                href="https://mui.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => null}
+                size="md"
+              >
+                Material UI
+              </Chip>
             </Stack>
             <Stack spacing={1}>
-              <FormLabel>Tech stack</FormLabel>
+              <FormLabel>Back End</FormLabel>
               <Stack direction="row" spacing={1}>
-                <Chip
-                  startDecorator={<FaReact />}
-                  component="a" //shows link on bottom of page on hover
-                  href="https://react.dev/"
-                  target="_blank" //opens in new tab
-                  rel="noopener noreferrer" //adds security when opening new link
-                  onClick={() => null} //adds onHover effect
-                  size="md"
-                >
-                  React
-                </Chip>
-                <Chip
-                  startDecorator={<SiTypescript />}
-                  component="a"
-                  href="https://www.typescriptlang.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Typescript
-                </Chip>
-                <Chip
-                  startDecorator={<SiMui />}
-                  component="a"
-                  href="https://mui.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Material UI
-                </Chip>
                 <Chip
                   startDecorator={<BiLogoSpringBoot />}
                   component="a"
@@ -266,18 +216,99 @@ export default function MyProfile({
                 >
                   Java Spring
                 </Chip>
+                <Chip
+                  startDecorator={<GrOracle />}
+                  component="a"
+                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Oracle SQL
+                </Chip>
               </Stack>
-              <Chip
-                startDecorator={<GrOracle />}
-                component="a"
-                href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => null}
-                size="md"
-              >
-                Oracle SQL
-              </Chip>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>Project Management</FormLabel>
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  startDecorator={<BiLogoSpringBoot />}
+                  component="a"
+                  href="https://spring.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Agile
+                </Chip>
+                <Chip
+                  startDecorator={<GrOracle />}
+                  component="a"
+                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Testing
+                </Chip>
+              </Stack>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>DevOps</FormLabel>
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  startDecorator={<BiLogoSpringBoot />}
+                  component="a"
+                  href="https://spring.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  OpenShift
+                </Chip>
+                <Chip
+                  startDecorator={<BiLogoSpringBoot />}
+                  component="a"
+                  href="https://spring.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Kubernetes
+                </Chip>
+                <Chip
+                  startDecorator={<GrOracle />}
+                  component="a"
+                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  Docker
+                </Chip>
+              </Stack>
+            </Stack>
+            <Stack spacing={1}>
+              <FormLabel>Cloud</FormLabel>
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  startDecorator={<BiLogoSpringBoot />}
+                  component="a"
+                  href="https://spring.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => null}
+                  size="md"
+                >
+                  ...
+                </Chip>
+              </Stack>
             </Stack>
           </Stack>
         </Card>
@@ -314,16 +345,6 @@ export default function MyProfile({
               }}
             />
           </Stack>
-        </Card>
-        <Card color="primary" ref={hobbiesRef}>
-          <Box sx={{ mb: 1 }}>
-            <Typography level="title-md">Hobbies</Typography>
-            <Typography level="body-sm">
-              Share a few snippets of your work.
-            </Typography>
-          </Box>
-          <Divider />
-          <Stack spacing={2} sx={{ my: 1 }}></Stack>
         </Card>
       </Stack>
     </Box>

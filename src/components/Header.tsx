@@ -6,14 +6,14 @@ type HeaderProps = {
   bioRef: React.RefObject<HTMLDivElement>;
   resumeRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
-  hobbiesRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
 };
 
 export default function Header({
   bioRef,
   resumeRef,
   projectsRef,
-  hobbiesRef,
+  skillsRef,
 }: HeaderProps) {
   const handleScroll = (ref: React.RefObject<HTMLDivElement> | null) => {
     if (ref && ref.current) {
@@ -67,14 +67,14 @@ export default function Header({
           <Button variant="plain" onClick={() => handleScroll(bioRef)}>
             Bio
           </Button>
+          <Button variant="plain" onClick={() => handleScroll(skillsRef)}>
+            Skills
+          </Button>
           <Button variant="plain" onClick={() => handleScroll(resumeRef)}>
             Resume
           </Button>
           <Button variant="plain" onClick={() => handleScroll(projectsRef)}>
             Projects
-          </Button>
-          <Button variant="plain" onClick={() => handleScroll(hobbiesRef)}>
-            Hobbies
           </Button>
         </Stack>
         <Box sx={{ ml: 12.5 }}></Box>
@@ -129,6 +129,13 @@ export default function Header({
             <Button
               variant="plain"
               size="sm"
+              onClick={() => handleScroll(skillsRef)}
+            >
+              Skills
+            </Button>
+            <Button
+              variant="plain"
+              size="sm"
               onClick={() => handleScroll(resumeRef)}
             >
               Resume
@@ -139,13 +146,6 @@ export default function Header({
               onClick={() => handleScroll(projectsRef)}
             >
               Projects
-            </Button>
-            <Button
-              variant="plain"
-              size="sm"
-              onClick={() => handleScroll(hobbiesRef)}
-            >
-              Hobbies
             </Button>
           </Stack>
         </Stack>
