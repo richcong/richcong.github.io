@@ -12,7 +12,6 @@ import MyProfile from "./components/MyProfile";
 const materialTheme = materialExtendTheme();
 
 function App() {
-  const bioRef = useRef(null);
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
@@ -24,7 +23,6 @@ function App() {
           <CssBaseline />
           <Box sx={{ display: "flex", minHeight: "100dvh" }}>
             <Header
-              bioRef={bioRef}
               resumeRef={resumeRef}
               projectsRef={projectsRef}
               skillsRef={skillsRef}
@@ -52,7 +50,6 @@ function App() {
               }}
             >
               <MyProfile
-                bioRef={bioRef}
                 resumeRef={resumeRef}
                 projectsRef={projectsRef}
                 skillsRef={skillsRef}

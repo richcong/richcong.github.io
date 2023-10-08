@@ -1,38 +1,24 @@
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import Divider from "@mui/joy/Divider";
-import IconButton from "@mui/joy/IconButton";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
-import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { GrOracle } from "react-icons/gr";
-import {
-  SiDocker,
-  SiGit,
-  SiJavascript,
-  SiKubernetes,
-  SiMui,
-  SiRedhatopenshift,
-  SiTypescript,
-} from "react-icons/si";
 
-import { Chip, FormLabel, Tooltip } from "@mui/joy";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { IconButton, Tooltip } from "@mui/joy";
 import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
+import SkillsCard from "./SkillsCard.tsx";
 
 type MyProfileProps = {
-  bioRef: React.RefObject<HTMLDivElement>;
   resumeRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
   skillsRef: React.RefObject<HTMLDivElement>;
 };
 
 export default function MyProfile({
-  bioRef,
   resumeRef,
   projectsRef,
   skillsRef,
@@ -62,53 +48,25 @@ export default function MyProfile({
       >
         <Card
           variant="plain"
-          sx={{ backgroundColor: "background.body" }}
-          ref={bioRef}
+          sx={{ mt: 0, pt: 0, backgroundColor: "background.body" }}
         >
-          <Box display="flex" flexDirection="row" sx={{ mb: 1 }}>
-            <Box>
-              <Typography level="title-md">Bio</Typography>
-              <Typography level="body-sm">About me</Typography>
-            </Box>
-            <Box flex={1}></Box>
-            <Tooltip title="GitHub">
-              <IconButton
-                component="a"
-                href="https://github.com/richcong"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  "--IconButton-size": "40px",
-                }}
-              >
-                <GitHubIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="LinkedIn">
-              <IconButton
-                component="a"
-                href="https://linkedin.com/in/richardcong"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  "--IconButton-size": "40px",
-                }}
-              >
-                <LinkedInIcon />
-              </IconButton>
-            </Tooltip>
-          </Box>
-          <Divider />
           <Stack
-            direction="row"
             spacing={3}
-            sx={{ display: { xs: "none", md: "flex" }, my: 1 }}
+            sx={{
+              display: { xs: "none", md: "flex" },
+              my: 1,
+              alignItems: "center",
+            }}
           >
             <Stack direction="column" spacing={1}>
               <AspectRatio
                 ratio="1"
                 maxHeight={200}
-                sx={{ flex: 1, minWidth: 120, borderRadius: "100%" }}
+                sx={{
+                  flex: 1,
+                  width: 150,
+                  borderRadius: "100%",
+                }}
               >
                 <img
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
@@ -124,27 +82,53 @@ export default function MyProfile({
                 the Australian Government in Canberra, Australia.
               </Typography>
             </Stack>
+            <Box display="flex">
+              <Tooltip placement="right" title="LinkedIn">
+                <IconButton
+                  component="a"
+                  href="https://linkedin.com/in/richardcong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "--IconButton-size": "40px",
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip placement="right" title="GitHub">
+                <IconButton
+                  component="a"
+                  href="https://github.com/richcong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "--IconButton-size": "40px",
+                  }}
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </Tooltip>
+            </Box>
           </Stack>
           <Stack
             direction="column"
             spacing={2}
-            sx={{ display: { xs: "flex", md: "none" }, my: 1 }}
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mb: 1,
+              alignItems: "center",
+            }}
           >
+            <AspectRatio ratio="1" sx={{ width: 100, borderRadius: "100%" }}>
+              <img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
+                srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
+                loading="lazy"
+                alt=""
+              />
+            </AspectRatio>
             <Stack direction="row" spacing={2}>
-              <Stack direction="column">
-                <AspectRatio
-                  ratio="1"
-                  maxHeight={108}
-                  sx={{ flex: 1, minWidth: 108, borderRadius: "100%" }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-                    srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
-                    loading="lazy"
-                    alt=""
-                  />
-                </AspectRatio>
-              </Stack>
               <Stack direction="column" gap={1} sx={{ flexGrow: 1 }}>
                 <Stack spacing={1}>
                   <Typography level="body-lg">
@@ -154,167 +138,38 @@ export default function MyProfile({
                 </Stack>
               </Stack>
             </Stack>
+            <Box display="flex">
+              <Box sx={{ flex: 1 }}></Box>
+              <Tooltip title="LinkedIn">
+                <IconButton
+                  component="a"
+                  href="https://linkedin.com/in/richardcong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "--IconButton-size": "40px",
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="GitHub">
+                <IconButton
+                  component="a"
+                  href="https://github.com/richcong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    "--IconButton-size": "40px",
+                  }}
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </Tooltip>
+            </Box>
           </Stack>
         </Card>
-        <Card color="primary" ref={skillsRef}>
-          <Box sx={{ mb: 1 }}>
-            <Typography level="title-md">Skills</Typography>
-            <Typography level="body-sm">My tech stack</Typography>
-          </Box>
-          <Divider />
-          <Stack spacing={1}>
-            <FormLabel>Front End</FormLabel>
-            <Stack direction="row" spacing={1}>
-              <Chip
-                startDecorator={<FaReact />}
-                component="a" //shows link on bottom of page on hover
-                href="https://react.dev/"
-                target="_blank" //opens in new tab
-                rel="noopener noreferrer" //adds security when opening new link
-                onClick={() => null} //adds onHover effect
-                size="md"
-              >
-                React
-              </Chip>
-              <Chip
-                startDecorator={<SiJavascript />}
-                component="a"
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => null}
-                size="md"
-              >
-                Javascript
-              </Chip>
-              <Chip
-                startDecorator={<SiTypescript />}
-                component="a"
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => null}
-                size="md"
-              >
-                Typescript
-              </Chip>
-              <Chip
-                startDecorator={<SiMui />}
-                component="a"
-                href="https://mui.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => null}
-                size="md"
-              >
-                Material UI
-              </Chip>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel>Back End</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip
-                  startDecorator={<BiLogoSpringBoot />}
-                  component="a"
-                  href="https://spring.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Java Spring
-                </Chip>
-                <Chip
-                  startDecorator={<GrOracle />}
-                  component="a"
-                  href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Oracle SQL
-                </Chip>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel>DevOps</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip
-                  startDecorator={<SiDocker />}
-                  component="a"
-                  href="https://www.docker.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Docker
-                </Chip>
-                <Chip
-                  startDecorator={<SiKubernetes />}
-                  component="a"
-                  href="https://kubernetes.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Kubernetes
-                </Chip>
-                <Chip
-                  startDecorator={<SiRedhatopenshift />}
-                  component="a"
-                  href="https://www.redhat.com/en/technologies/cloud-computing/openshift"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  OpenShift
-                </Chip>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel>Cloud</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip size="md">...</Chip>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel>Project Management</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip
-                  component="a"
-                  href="https://www.atlassian.com/agile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Agile
-                </Chip>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <FormLabel>Others</FormLabel>
-              <Stack direction="row" spacing={1}>
-                <Chip
-                  startDecorator={<SiGit />}
-                  component="a"
-                  href="https://git-scm.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => null}
-                  size="md"
-                >
-                  Git
-                </Chip>
-                <Chip size="md">Testing</Chip>
-              </Stack>
-            </Stack>
-          </Stack>
-        </Card>
+        <SkillsCard skillsRef={skillsRef} />
         <Card color="primary" ref={resumeRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Resume</Typography>
@@ -333,7 +188,7 @@ export default function MyProfile({
             </Typography>
           </Box>
           <Divider />
-          <Stack sx={{ my: 3, mx: 5 }}>
+          <Stack sx={{ my: { xs: 1, md: 3 }, mx: { xs: 0, md: 5 } }}>
             <ProjectCard
               title="Portfolio"
               description="A showcase of my dev journey"
