@@ -3,27 +3,26 @@ import Sheet from "@mui/joy/Sheet";
 import ColorSchemeToggle from "./ColorSchemeToggle";
 
 type HeaderProps = {
-  bioRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
   resumeRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
-  skillsRef: React.RefObject<HTMLDivElement>;
 };
 
 export default function Header({
-  bioRef,
+  skillsRef,
   resumeRef,
   projectsRef,
-  skillsRef,
 }: HeaderProps) {
   const handleScroll = (ref: React.RefObject<HTMLDivElement> | null) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({
-        block: "center",
-        inline: "start",
         behavior: "smooth",
+        block: "start",
+        inline: "nearest",
       });
     }
   };
+
   return (
     <>
       {/* Computer view --------------------------------------------------------- */}
@@ -64,9 +63,6 @@ export default function Header({
           </Typography>
         </Box>
         <Stack direction="row" gap={1}>
-          <Button variant="plain" onClick={() => handleScroll(bioRef)}>
-            Bio
-          </Button>
           <Button variant="plain" onClick={() => handleScroll(skillsRef)}>
             Skills
           </Button>
@@ -119,13 +115,6 @@ export default function Header({
             Richard Cong
           </Typography>
           <Stack direction="row">
-            <Button
-              variant="plain"
-              size="sm"
-              onClick={() => handleScroll(bioRef)}
-            >
-              Bio
-            </Button>
             <Button
               variant="plain"
               size="sm"

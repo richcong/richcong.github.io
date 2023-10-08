@@ -51,11 +51,62 @@ export default function ProjectCard({
         <Typography level="body-sm" sx={{ mb: 1 }}>
           {description}
         </Typography>
-        <Stack direction="row" spacing={1}>
-          {tech.map((tech) => (
-            <Chip size="md">{tech}</Chip>
-          ))}
-        </Stack>
+        {/* Computer view --------------------------------------------------------- */}
+        {tech.length <= 6 && (
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            {tech.map((tech) => (
+              <Chip size="md">{tech}</Chip>
+            ))}
+          </Stack>
+        )}
+        {tech.length > 6 && (
+          <>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
+              {tech.slice(0, 6).map((tech) => (
+                <Chip size="md">{tech}</Chip>
+              ))}
+            </Stack>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
+              {tech.slice(6, tech.length).map((tech) => (
+                <Chip size="md">{tech}</Chip>
+              ))}
+            </Stack>
+          </>
+        )}
+        {/* Mobile view --------------------------------------------------------- */}
+        {tech.length <= 3 && (
+          <Stack direction="row" spacing={1} sx={{ display: { md: "none" } }}>
+            {tech.map((tech) => (
+              <Chip size="md">{tech}</Chip>
+            ))}
+          </Stack>
+        )}
+        {tech.length > 3 && tech.length <= 6 && (
+          <>
+            <Stack direction="row" spacing={1} sx={{ display: { md: "none" } }}>
+              {tech.slice(0, 3).map((tech) => (
+                <Chip size="md">{tech}</Chip>
+              ))}
+            </Stack>
+            <Stack direction="row" spacing={1} sx={{ display: { md: "none" } }}>
+              {tech.slice(3, tech.length).map((tech) => (
+                <Chip size="md">{tech}</Chip>
+              ))}
+            </Stack>
+          </>
+        )}
       </CardContent>
       <CardOverflow sx={{ bgcolor: "background.level1" }}>
         <CardActions buttonFlex="1">
