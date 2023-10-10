@@ -1,3 +1,5 @@
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { ButtonGroup, CardActions, Stack } from "@mui/joy";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Button from "@mui/joy/Button";
@@ -31,7 +33,7 @@ export default function ProjectCard({
   return (
     <Card sx={{ maxWidth: "100%", boxShadow: "lg" }}>
       <CardOverflow>
-        <AspectRatio sx={{ minWidth: 200 }}>
+        <AspectRatio objectFit="contain" sx={{ minWidth: 100 }}>
           <img src={src} srcSet={srcSet} loading="lazy" alt={title} />
         </AspectRatio>
       </CardOverflow>
@@ -119,6 +121,7 @@ export default function ProjectCard({
               href={links.goto}
               target="_blank"
               rel="noopener noreferrer"
+              endDecorator={<ExitToAppIcon />}
             >
               Go to
             </Button>
@@ -127,6 +130,7 @@ export default function ProjectCard({
               href={links.source}
               target="_blank"
               rel="noopener noreferrer"
+              endDecorator={<GitHubIcon />}
             >
               Source code
             </Button>
