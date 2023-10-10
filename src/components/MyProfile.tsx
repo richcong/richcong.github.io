@@ -192,8 +192,8 @@ export default function MyProfile({
             <ProjectCard
               title="Portfolio"
               description="A showcase of my dev journey"
-              src=""
-              srcSet=""
+              src="/public/construction-tools.svg"
+              srcSet="/public/construction-tools.svg"
               year={2023}
               type="Website"
               tech={["React", "Joy UI", "Typescript", "Vite", "Github Pages"]}

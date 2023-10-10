@@ -21,7 +21,7 @@ export default function ResumeTimeline() {
           color="text.secondary"
           style={{ flex: 0.1 }}
         >
-          Current
+          2023
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
