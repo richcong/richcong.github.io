@@ -83,7 +83,7 @@ export default function MyProfile({
               </Typography>
             </Stack>
             <Box display="flex">
-              <Tooltip placement="right" title="LinkedIn">
+              <Tooltip title="LinkedIn">
                 <IconButton
                   component="a"
                   href="https://linkedin.com/in/richardcong"
@@ -96,7 +96,7 @@ export default function MyProfile({
                   <LinkedInIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip placement="right" title="GitHub">
+              <Tooltip title="GitHub">
                 <IconButton
                   component="a"
                   href="https://github.com/richcong"
