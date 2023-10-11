@@ -7,19 +7,22 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import TimelineOppositeContent, { timelineOppositeContentClasses} from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import "../css/common/List.css";
 
 export default function ResumeTimeline() {
   return (
-    <Timeline>
+    <Timeline sx={{
+      [`& .${timelineOppositeContentClasses.root}`]: {
+        flex: 0,
+      },
+    }}>
       <TimelineItem>
         <TimelineOppositeContent
           sx={{ m: "auto 0" }}
           variant="body2"
           color="text.secondary"
-          style={{ flex: 0.1 }}
         >
           2023
         </TimelineOppositeContent>
@@ -52,7 +55,6 @@ export default function ResumeTimeline() {
           sx={{ m: "auto 0" }}
           variant="body2"
           color="text.secondary"
-          style={{ flex: 0.1 }}
         >
           2021
         </TimelineOppositeContent>
@@ -76,7 +78,6 @@ export default function ResumeTimeline() {
           align="right"
           variant="body2"
           color="text.secondary"
-          style={{ flex: 0.1 }}
         >
           2020
         </TimelineOppositeContent>
