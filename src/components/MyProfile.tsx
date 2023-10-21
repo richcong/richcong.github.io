@@ -69,8 +69,8 @@ export default function MyProfile({
                 }}
               >
                 <img
-                  src="/src/assets/face-photo.jpg"
-                  srcSet="/src/assets/face-photo.jpg"
+                  src="/face-photo.jpg"
+                  srcSet="/face-photo.jpg"
                   loading="lazy"
                   alt="Photo of myself"
                 />
@@ -122,8 +122,8 @@ export default function MyProfile({
           >
             <AspectRatio ratio="1" sx={{ width: 100, borderRadius: "100%" }}>
               <img
-                src="/src/assets/face-photo.jpg"
-                srcSet="/src/assets/face-photo.jpg"
+                src="/face-photo.jpg"
+                srcSet="/face-photo.jpg"
                 loading="lazy"
                 alt="Photo of myself"
               />
@@ -192,8 +192,8 @@ export default function MyProfile({
             <ProjectCard
               title="Portfolio"
               description="A showcase of my dev journey"
-              src="/src/assets/construction-tools.svg"
-              srcSet="/src/assets/construction-tools.svg"
+              src="/construction-tools.svg"
+              srcSet="/construction-tools.svg"
               year={2023}
               type="Website"
               tech={["React", "Joy UI", "Typescript", "Vite", "Github Pages"]}
