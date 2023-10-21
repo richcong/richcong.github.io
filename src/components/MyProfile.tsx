@@ -170,7 +170,7 @@ export default function MyProfile({
           </Stack>
         </Card>
         <SkillsCard skillsRef={skillsRef} />
-        <Card color="primary" ref={resumeRef}>
+        <Card color="primary" ref={resumeRef} sx={{ scrollMarginTop: "70px" }}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Resume</Typography>
             <Typography level="body-sm">

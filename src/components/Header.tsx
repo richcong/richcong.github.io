@@ -17,8 +17,6 @@ export default function Header({
     if (ref && ref.current) {
       ref.current.scrollIntoView({
         behavior: "smooth",
-        block: "start",
-        inline: "nearest",
       });
     }
   };
