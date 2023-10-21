@@ -69,10 +69,10 @@ export default function MyProfile({
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-                  srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
+                  src="/src/assets/face-photo.jpg"
+                  srcSet="/src/assets/face-photo.jpg"
                   loading="lazy"
-                  alt=""
+                  alt="Photo of myself"
                 />
               </AspectRatio>
             </Stack>
@@ -122,10 +122,10 @@ export default function MyProfile({
           >
             <AspectRatio ratio="1" sx={{ width: 100, borderRadius: "100%" }}>
               <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-                srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
+                src="/src/assets/face-photo.jpg"
+                srcSet="/src/assets/face-photo.jpg"
                 loading="lazy"
-                alt=""
+                alt="Photo of myself"
               />
             </AspectRatio>
             <Stack direction="row" spacing={2}>
