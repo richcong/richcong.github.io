@@ -53,7 +53,7 @@ export default function Header({
             sx={{
               mt: 2,
               mb: 2,
-              ml: -8, //Brings the header to the left in line with the main content
+              ml: -7, //Brings the header to the left in line with the main content
               fontWeight: "600",
             }}
           >
@@ -71,7 +71,7 @@ export default function Header({
             Projects
           </Button>
         </Stack>
-        <Box sx={{ ml: 12.5 }}></Box>
+        <Box sx={{ ml: 20 }}></Box>
         <ColorSchemeToggle />
       </Sheet>
       {/* Mobile view --------------------------------------------------------- */}
