@@ -7,17 +7,21 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineOppositeContent, { timelineOppositeContentClasses} from "@mui/lab/TimelineOppositeContent";
+import TimelineOppositeContent, {
+  timelineOppositeContentClasses,
+} from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import "../css/common/List.css";
 
 export default function ResumeTimeline() {
   return (
-    <Timeline sx={{
-      [`& .${timelineOppositeContentClasses.root}`]: {
-        flex: 0,
-      },
-    }}>
+    <Timeline
+      sx={{
+        [`& .${timelineOppositeContentClasses.root}`]: {
+          flex: 0,
+        },
+      }}
+    >
       <TimelineItem>
         <TimelineOppositeContent
           sx={{ m: "auto 0" }}
@@ -37,7 +41,7 @@ export default function ResumeTimeline() {
           <Typography level="title-md" component="span">
             Australian Government
           </Typography>
-          <Typography>Front End Developer</Typography>
+          <Typography>Software Developer</Typography>
           <Typography level="body-sm">
             <ul>
               <li>Developed an internal web-based React app from scratch</li>
