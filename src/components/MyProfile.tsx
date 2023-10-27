@@ -78,7 +78,7 @@ export default function MyProfile({
             </Stack>
             <Stack spacing={2} sx={{ flexGrow: 1 }}>
               <Typography level="h2" fontWeight={400}>
-                Hello! I'm Richard Cong. I'm a Front End Developer working for
+                Hello! I'm Richard Cong. I'm a Software Developer working for
                 the Australian Government in Canberra, Australia.
               </Typography>
             </Stack>
@@ -132,7 +132,7 @@ export default function MyProfile({
               <Stack direction="column" gap={1} sx={{ flexGrow: 1 }}>
                 <Stack spacing={1}>
                   <Typography level="body-lg">
-                    Hello! I'm Richard Cong. I'm a Front End Developer working
+                    Hello! I'm Richard Cong. I'm a Software Developer working
                     for the Australian Government in Canberra, Australia.
                   </Typography>
                 </Stack>
