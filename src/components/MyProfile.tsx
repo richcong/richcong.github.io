@@ -171,7 +171,7 @@ export default function MyProfile({
             </Box>
           </Stack>
         </Card>
-        <Player autoplay loop src={HORSE} style={{ height: "30vh" }}></Player>
+        <Player autoplay loop src={HORSE} style={{ height: "25vh" }}></Player>
         <SkillsCard skillsRef={skillsRef} />
         <Card color="primary" ref={resumeRef} sx={{ scrollMarginTop: "70px" }}>
           <Box sx={{ mb: 1 }}>
