@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <MaterialCssVarsProvider theme={{ [MATERIAL_THEME_ID]: materialTheme }}>
-        <JoyCssVarsProvider disableTransitionOnChange>
+        <JoyCssVarsProvider disableTransitionOnChange defaultMode="dark">
           <CssBaseline />
           <Box sx={{ display: "flex", minHeight: "100dvh" }}>
             <Header

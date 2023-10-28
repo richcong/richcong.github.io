@@ -5,9 +5,11 @@ import Divider from "@mui/joy/Divider";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 
+import { Player } from "@lottiefiles/react-lottie-player";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { IconButton, Tooltip } from "@mui/joy";
+import HORSE from "../../public/horse-animation.json";
 import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
 import SkillsCard from "./SkillsCard.tsx";
@@ -169,6 +171,7 @@ export default function MyProfile({
             </Box>
           </Stack>
         </Card>
+        <Player autoplay loop src={HORSE} style={{ height: "30vh" }}></Player>
         <SkillsCard skillsRef={skillsRef} />
         <Card color="primary" ref={resumeRef} sx={{ scrollMarginTop: "70px" }}>
           <Box sx={{ mb: 1 }}>
