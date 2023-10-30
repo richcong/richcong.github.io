@@ -1,15 +1,14 @@
+import { Player } from "@lottiefiles/react-lottie-player";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { IconButton, Tooltip } from "@mui/joy";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import Divider from "@mui/joy/Divider";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
-
-import { Player } from "@lottiefiles/react-lottie-player";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { IconButton, Tooltip } from "@mui/joy";
-import HORSE from "../../public/horse-animation.json";
+import { useColorScheme } from "@mui/joy/styles";
 import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
 import SkillsCard from "./SkillsCard.tsx";
@@ -25,6 +24,7 @@ export default function MyProfile({
   projectsRef,
   skillsRef,
 }: MyProfileProps) {
+  const { mode } = useColorScheme();
   return (
     <Box
       sx={{
@@ -171,7 +171,21 @@ export default function MyProfile({
             </Box>
           </Stack>
         </Card>
-        <Player autoplay loop src={HORSE} style={{ height: "25vh" }}></Player>
+        {mode === "dark" ? (
+          <Player
+            autoplay
+            loop
+            src={"/horse-purple-animation.json"}
+            style={{ height: "25vh" }}
+          />
+        ) : (
+          <Player
+            autoplay
+            loop
+            src={"/horse-black-animation.json"}
+            style={{ height: "25vh" }}
+          />
+        )}
         <SkillsCard skillsRef={skillsRef} />
         <Card color="primary" ref={resumeRef} sx={{ scrollMarginTop: "70px" }}>
           <Box sx={{ mb: 1 }}>
