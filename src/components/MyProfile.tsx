@@ -1,4 +1,5 @@
 import { Player } from "@lottiefiles/react-lottie-player";
+import DownloadIcon from "@mui/icons-material/Download";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { IconButton, Tooltip } from "@mui/joy";
@@ -26,6 +27,11 @@ export default function MyProfile({
   skillsRef,
 }: MyProfileProps) {
   const { mode } = useColorScheme();
+
+  const handleResumeButtonClick = () => {
+    window.open("/RichardCong_Resume.pdf", "_blank");
+  };
+
   return (
     <Box
       sx={{
@@ -190,11 +196,19 @@ export default function MyProfile({
         )}
         <SkillsCard skillsRef={skillsRef} />
         <Card color="primary" ref={resumeRef} sx={{ scrollMarginTop: "70px" }}>
-          <Box sx={{ mb: 1 }}>
-            <Typography level="title-md">Resume</Typography>
-            <Typography level="body-sm">
-              My work experience and education
-            </Typography>
+          <Box sx={{ mb: 1, display: "flex", flexDirection: "row" }}>
+            <Stack>
+              <Typography level="title-md">Resume</Typography>
+              <Typography level="body-sm">
+                My work experience and education
+              </Typography>
+            </Stack>
+            <Box sx={{ ml: "auto" }}></Box>
+            <Tooltip title="Download resume" placement="top">
+              <IconButton onClick={handleResumeButtonClick} variant="solid">
+                <DownloadIcon />
+              </IconButton>
+            </Tooltip>
           </Box>
           <Divider />
           <ResumeTimeline />
