@@ -1,0 +1,345 @@
+/* Light mode ------------------------ */
+.light-mode #soploline11 path {
+  stroke: black;
+}
+
+.light-mode #soploline10 path {
+  stroke: black;
+}
+
+.light-mode #soploline9 path {
+  stroke: black;
+}
+
+.light-mode #soploline8 path {
+  stroke: black;
+}
+
+.light-mode #soploline7 path {
+  stroke: black;
+}
+
+.light-mode #soploline6 path {
+  stroke: black;
+}
+
+.light-mode #soploline5 path {
+  stroke: black;
+}
+
+.light-mode #soploline4 path {
+  stroke: black;
+}
+
+.light-mode #soploline3 path {
+  stroke: black;
+}
+
+.light-mode #soploline2 path {
+  stroke: black;
+}
+
+.light-mode #soploline1 path {
+  stroke: black;
+}
+
+.light-mode #soplor path {
+  stroke: black;
+}
+
+.light-mode #soplol path {
+  stroke: black;
+}
+
+.light-mode #lineeffect9 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect8 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect7 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect6 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect5 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect4 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect3 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect2 path {
+  stroke: black;
+}
+
+.light-mode #lineeffect1 path {
+  stroke: black;
+}
+
+.light-mode #starctrlr path {
+  stroke: black;
+}
+
+.light-mode #bodyctrlp path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #body3 path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #1wing path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #body4 path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #2wing path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #body2 path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #lilum path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #body5 path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #lilum2 path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #body path {
+  stroke: black;
+  fill: white;
+}
+
+.light-mode #crossstar4 path {
+  stroke: black;
+}
+
+.light-mode #crossstar3 path {
+  stroke: black;
+}
+
+.light-mode #crossstar2 path {
+  stroke: black;
+}
+
+.light-mode #crossstar1 path {
+  stroke: black;
+}
+
+.light-mode #circlestar4 path {
+  stroke: black;
+}
+
+.light-mode #circlestar3 path {
+  stroke: black;
+}
+
+.light-mode #circlestar2 path {
+  stroke: black;
+}
+
+.light-mode #circlestar1 path {
+  stroke: black;
+}
+
+/* Dark mode ------------------------ */
+
+#soploline11 path {
+  stroke: white;
+}
+
+#soploline10 path {
+  stroke: white;
+}
+
+#soploline9 path {
+  stroke: white;
+}
+
+#soploline8 path {
+  stroke: white;
+}
+
+#soploline7 path {
+  stroke: white;
+}
+
+#soploline6 path {
+  stroke: white;
+}
+
+#soploline5 path {
+  stroke: white;
+}
+
+#soploline4 path {
+  stroke: white;
+}
+
+#soploline3 path {
+  stroke: white;
+}
+
+#soploline2 path {
+  stroke: white;
+}
+
+#soploline1 path {
+  stroke: white;
+}
+
+#soplor path {
+  stroke: white;
+}
+
+#soplol path {
+  stroke: white;
+}
+
+#lineeffect9 path {
+  stroke: white;
+}
+
+#lineeffect8 path {
+  stroke: white;
+}
+
+#lineeffect7 path {
+  stroke: white;
+}
+
+#lineeffect6 path {
+  stroke: white;
+}
+
+#lineeffect5 path {
+  stroke: white;
+}
+
+#lineeffect4 path {
+  stroke: white;
+}
+
+#lineeffect3 path {
+  stroke: white;
+}
+
+#lineeffect2 path {
+  stroke: white;
+}
+
+#lineeffect1 path {
+  stroke: white;
+}
+
+#starctrlr path {
+  stroke: white;
+}
+
+#bodyctrlp path {
+  stroke: black;
+  fill: black;
+}
+
+#body3 path {
+  stroke: white;
+  fill: black;
+}
+
+#1wing path {
+  stroke: white;
+  fill: black;
+}
+
+#body4 path {
+  stroke: white;
+}
+
+#2wing path {
+  stroke: blue;
+  fill: blue;
+}
+
+#body2 path {
+  stroke: white;
+}
+
+#lilum path {
+  stroke: white;
+}
+
+#body5 path {
+  stroke: white;
+}
+
+#lilum2 path {
+  stroke: white;
+}
+
+#body path {
+  stroke: white;
+  fill: black;
+}
+
+#crossstar4 path {
+  stroke: white;
+}
+
+#crossstar3 path {
+  stroke: white;
+}
+
+#crossstar2 path {
+  stroke: white;
+}
+
+#crossstar1 path {
+  stroke: white;
+}
+
+#circlestar4 path {
+  stroke: white;
+}
+
+#circlestar3 path {
+  stroke: white;
+}
+
+#circlestar2 path {
+  stroke: white;
+}
+
+#circlestar1 path {
+  stroke: white;
+}

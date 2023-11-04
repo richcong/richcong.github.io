@@ -31,7 +31,7 @@ export default function ResumeTimeline() {
           2023
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineConnector />
+          <TimelineConnector sx={{ bgcolor: "primary.main" }} />
           <TimelineDot color="primary">
             <AccountBalanceIcon />
           </TimelineDot>
@@ -42,16 +42,7 @@ export default function ResumeTimeline() {
             Australian Government
           </Typography>
           <Typography>Software Developer</Typography>
-          <Typography level="body-sm">
-            <ul>
-              <li>Developed an internal web-based React app from scratch</li>
-              <li>Led the bug fix effort on the front end</li>
-              <li>
-                Utilised REST APIs to display data from the backend to the front
-              </li>
-              <li>Experienced Agile practitioner</li>
-            </ul>
-          </Typography>
+          <Typography>Software Tester</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -60,14 +51,13 @@ export default function ResumeTimeline() {
           variant="body2"
           color="text.secondary"
         >
-          2021
+          2022
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot color="primary" variant="outlined">
             <SchoolIcon />
           </TimelineDot>
-          <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography level="title-md" component="span">
@@ -96,15 +86,7 @@ export default function ResumeTimeline() {
           <Typography level="title-md" component="span">
             Deloitte
           </Typography>
-          <Typography>Platform Engineering Internship</Typography>
-          <Typography level="body-sm">
-            <ul>
-              <li>
-                Used Mulesoft to retrieve data from databases and display data
-                front end
-              </li>
-            </ul>
-          </Typography>
+          <Typography>Platform Engineer Intern</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

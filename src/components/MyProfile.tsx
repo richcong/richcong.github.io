@@ -9,6 +9,7 @@ import Divider from "@mui/joy/Divider";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 import { useColorScheme } from "@mui/joy/styles";
+import "../css/RocketAnimation.css";
 import ProjectCard from "./ProjectCard.tsx";
 import ResumeTimeline from "./ResumeTimeline.tsx";
 import SkillsCard from "./SkillsCard.tsx";
@@ -175,15 +176,16 @@ export default function MyProfile({
           <Player
             autoplay
             loop
-            src={"/horse-purple-animation.json"}
+            src={"/rocket-animation.json"}
             style={{ height: "25vh" }}
           />
         ) : (
           <Player
             autoplay
             loop
-            src={"/horse-black-animation.json"}
+            src={"/rocket-animation.json"}
             style={{ height: "25vh" }}
+            className={"light-mode"}
           />
         )}
         <SkillsCard skillsRef={skillsRef} />
