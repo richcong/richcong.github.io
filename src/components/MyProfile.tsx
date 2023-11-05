@@ -216,17 +216,17 @@ export default function MyProfile({
         <Card color="primary" ref={projectsRef}>
           <Box sx={{ mb: 1 }}>
             <Typography level="title-md">Projects</Typography>
-            <Typography level="body-sm">
-              Personal projects I've worked on
-            </Typography>
+            <Typography level="body-sm">Things I've built</Typography>
           </Box>
           <Divider />
           <Stack sx={{ my: { xs: 1, md: 3 }, mx: { xs: 0, md: 5 } }}>
             <ProjectCard
               title="Portfolio"
               description="A showcase of my dev journey"
-              src="/construction-tools.svg"
-              srcSet="/construction-tools.svg"
+              src={mode === "dark" ? "/website-dark.png" : "/website-light.png"}
+              srcSet={
+                mode === "dark" ? "/website-dark.png" : "/website-light.png"
+              }
               year={2023}
               type="Website"
               tech={["React", "Joy UI", "Typescript", "Vite", "Github Pages"]}
