@@ -222,7 +222,7 @@ export default function MyProfile({
           <Stack sx={{ my: { xs: 1, md: 3 }, mx: { xs: 0, md: 5 } }}>
             <ProjectCard
               title="Portfolio"
-              description="A showcase of my dev journey"
+              description="A showcase of my journey in tech"
               src={mode === "dark" ? "/website-dark.png" : "/website-light.png"}
               srcSet={
                 mode === "dark" ? "/website-dark.png" : "/website-light.png"
