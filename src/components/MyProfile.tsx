@@ -199,9 +199,7 @@ export default function MyProfile({
           <Box sx={{ mb: 1, display: "flex", flexDirection: "row" }}>
             <Stack>
               <Typography level="title-md">Resume</Typography>
-              <Typography level="body-sm">
-                My work experience and education
-              </Typography>
+              <Typography level="body-sm">My work experience</Typography>
             </Stack>
             <Box sx={{ ml: "auto" }}></Box>
             <Tooltip title="Download resume" placement="top">
